@@ -52,7 +52,7 @@ npm run dev
 - [Package name]()
 
 ## 📑 Sources
-- [Bronnen]()
+- [Notion](https://busy-flame-a4b.notion.site/Week-1-c31991981a5f493eb8297a10e3c4a235)
 
 ## 🔖 License
 [![license](https://img.shields.io/github/license/DAVFoundation/captain-n3m0.svg?style=flat-square)]()
