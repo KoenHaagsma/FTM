@@ -33,7 +33,9 @@ function App() {
 
   return (
     <div className="container">
+      <h1>Afstanden tot voorzieningen <span>in emmen</span></h1>
       <div className="area-code">
+        <p>Zoek andere wijk:</p>
         <input
           placeholder="Postcode"
           maxLength="6"
@@ -41,7 +43,11 @@ function App() {
           value={postcode}
           onChange={(e) => setPostcode(e.target.value)}
         />
-        <button onClick={handleClick}>Zoek andere wijk</button>
+        <button onSubmit={handleClick}>🔎</button>
+      </div>
+      <div className="years">
+        <button>2007</button>
+        <button>2019</button>
       </div>
     </div>
   );
