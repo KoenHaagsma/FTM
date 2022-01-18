@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-// import SmallMultiples from './Small-Multiples/SmallMultiples';
+import BiggestChanges from './BiggestChanges/BiggestChanges.js';
 import { csv } from 'd3';
 
 function App() {
@@ -43,6 +43,7 @@ function App() {
                 <button onClick={handleClick}>Zoek andere wijk test tekst</button>
             </div>
             {/* <SmallMultiples width={400} height={300} /> */}
+            <BiggestChanges />
         </div>
     );
 }
