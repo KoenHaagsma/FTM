@@ -1,33 +1,39 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { compareDistance } from '../compareDistance';
 
-export default function SmallMultiples() {
-    async function compareDistance() {
-        await fetch('/data_shapes.json')
-            .then((response) => response.json())
-            .then(async (data) => {
-                const year2007 = [];
-                const year2019 = [];
+export default function BiggestChanges() {
+    const [data, setData] = useState();
 
-                // Get specific year
-                for (let el in data) {
-                    if (data[el].Jaar === 2019) {
-                        await year2019.push(data[el]);
-                    } else if (data[el].Jaar === 2007) {
-                        await year2007.push(data[el]);
-                    }
-                }
+    useEffect(() => {
+        let isMounted = true;
+        compareDistance().then((d) => {
+            if (isMounted) setData(d);
+        });
+        return () => {
+            isMounted = false;
+        };
+    }, []);
 
-                // Compare the two arrays
-                const nederland2007 = year2007.find((el) => el.GWB_NAAM === 'Nederland');
-                const nederland2019 = year2019.find((el) => el.GWB_NAAM === 'Nederland');
+    useEffect(() => {
+        console.log(data);
+    }, [data]);
 
-                const difference1 = parseFloat(nederland2007.huisartsenpost_afst.split(',').join('.'));
-                const difference2 = parseFloat(nederland2019.huisartsenpost_afst.split(',').join('.'));
-                console.log(parseFloat((difference2 - difference1).toFixed(2)));
-            });
-    }
-
-    compareDistance();
-
-    return <div id="container" />;
+    return (
+        <>
+            <div id="container">
+                <ul>
+                    {data &&
+                        data.map((obj, index) => (
+                            <li key={`${obj.districtCode}${index}`}>
+                                {obj.districtName}
+                                {' - '}
+                                {`${Object.keys(obj)[Object.keys(obj).length - 1]}: ${
+                                    obj[Object.keys(obj)[Object.keys(obj).length - 1]]
+                                }`}
+                            </li>
+                        ))}
+                </ul>
+            </div>
+        </>
+    );
 }

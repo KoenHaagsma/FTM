@@ -31,20 +31,21 @@ function App() {
     };
 
     return (
-        <div className="container">
-            <div className="area-code">
-                <input
-                    placeholder="Postcode"
-                    maxLength="6"
-                    id="code"
-                    value={postcode}
-                    onChange={(e) => setPostcode(e.target.value)}
-                />
-                <button onClick={handleClick}>Zoek andere wijk test tekst</button>
+        <>
+            <div className="container">
+                <div className="area-code">
+                    <input
+                        placeholder="Postcode"
+                        maxLength="6"
+                        id="code"
+                        value={postcode}
+                        onChange={(e) => setPostcode(e.target.value)}
+                    />
+                    <button onClick={handleClick}>Zoek andere wijk test tekst</button>
+                </div>
             </div>
-            {/* <SmallMultiples width={400} height={300} /> */}
             <BiggestChanges />
-        </div>
+        </>
     );
 }
 
