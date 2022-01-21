@@ -7,7 +7,7 @@ const compareDistance = () => {
                 const year2019 = [];
 
                 // Get specific year
-                for (let el in data) {
+                for (const el in data) {
                     if (data[el].Jaar === 2019) {
                         year2019.push(data[el]);
                     } else if (data[el].Jaar === 2007) {
@@ -22,7 +22,7 @@ const compareDistance = () => {
 
                 // Match placenames && year
                 const placenamesYear = [];
-                for (let element in nameOfDistrict) {
+                for (const element in nameOfDistrict) {
                     placenamesYear.push({
                         district2007: year2007.find((el) => el.GWB_CODE === nameOfDistrict[element].code),
                         district2019: year2019.find((el) => el.GWB_CODE === nameOfDistrict[element].code),
@@ -41,11 +41,11 @@ const compareDistance = () => {
                     'havovwo_afst',
                     'bibliotheek_afst',
                 ];
-                for (let element of placenamesYear) {
+                for (const element of placenamesYear) {
                     const difference = {
                         districtCode: element.district2007.GWB_CODE,
                     };
-                    for (let key1 of keys) {
+                    for (const key1 of keys) {
                         let distance1;
                         let distance2;
                         if (
@@ -65,9 +65,9 @@ const compareDistance = () => {
 
                 // Get maximum value per key
                 const output = [];
-                for (let key1 of keys) {
+                for (const key1 of keys) {
                     let maxValue = differenceArray[0];
-                    for (let difference of differenceArray) {
+                    for (const difference of differenceArray) {
                         if (maxValue[`${key1}_difference`] < difference[`${key1}_difference`]) {
                             maxValue = difference;
                         }
@@ -84,7 +84,7 @@ const compareDistance = () => {
                 if (output.length === keys.length) {
                     const testArray = [];
                     let i = 0;
-                    for (let out of output) {
+                    for (const out of output) {
                         const districts = data.filter((el) => el.GWB_CODE === out.districtCode);
                         for (const district of districts) {
                             const districtKey = keys[i];
@@ -97,10 +97,9 @@ const compareDistance = () => {
                             pushOutput[keys[i]] = district[districtKey];
                             testArray.push(pushOutput);
                         }
+                        i++;
                     }
                     console.log(testArray);
-
-                    console.log(output);
                     resolve(output);
                 }
                 return output;
