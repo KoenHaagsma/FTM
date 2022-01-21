@@ -54,7 +54,6 @@ const compareDistance = () => {
                             checkKey(element.district2019, element.district2007, key1)
                         ) {
                             distance1 = parseFloat(element.district2007[key1].split(',').join('.'));
-
                             distance2 = parseFloat(element.district2019[key1].split(',').join('.'));
 
                             // Set new object key with difference value per key
@@ -83,6 +82,25 @@ const compareDistance = () => {
 
                 // End result
                 if (output.length === keys.length) {
+                    const testArray = [];
+                    let i = 0;
+                    for (let out of output) {
+                        const districts = data.filter((el) => el.GWB_CODE === out.districtCode);
+                        for (const district of districts) {
+                            const districtKey = keys[i];
+                            const pushOutput = {
+                                districtCode: district.GWB_CODE,
+                                districtNaam: district.GWB_NAAM,
+                                districtJaar: district.Jaar,
+                                districtKey: districtKey,
+                            };
+                            pushOutput[keys[i]] = district[districtKey];
+                            testArray.push(pushOutput);
+                        }
+                    }
+                    console.log(testArray);
+
+                    console.log(output);
                     resolve(output);
                 }
                 return output;
