@@ -26,6 +26,7 @@ export default function DifferenceNetherlands() {
                         data.map((obj, index) => (
                             <li key={`${obj.districtCode}${index}`}>
                                 {obj.districtName}
+                                {obj.key}
                                 {' - '}
                                 {`${Object.keys(obj)[Object.keys(obj).length - 1]}: ${
                                     obj[Object.keys(obj)[Object.keys(obj).length - 1]]

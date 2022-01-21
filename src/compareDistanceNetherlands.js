@@ -36,7 +36,7 @@ const compareDistanceNetherlands = () => {
                     };
                     diffrenceArray.push(differenceObject);
                 }
-                console.log(diffrenceArray);
+                resolve(diffrenceArray);
             })
             .catch((err) => reject(err));
     });
