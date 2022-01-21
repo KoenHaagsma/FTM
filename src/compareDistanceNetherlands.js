@@ -36,6 +36,24 @@ const compareDistanceNetherlands = () => {
                     };
                     diffrenceArray.push(differenceObject);
                 }
+
+                const stepsNetherlands = [];
+                let i = 0;
+                for (const out of netherlands) {
+                    const districts = data.filter((el) => el.GWB_CODE === out.GWB_CODE);
+                    for (const district of districts) {
+                        const districtKey = keys[i];
+                        const pushOutput = {
+                            districtNaam: district.GWB_NAAM,
+                            districtJaar: district.Jaar,
+                            districtKey: districtKey,
+                        };
+                        pushOutput[keys[i]] = district[districtKey];
+                        stepsNetherlands.push(pushOutput);
+                    }
+                    i++;
+                }
+                console.log(stepsNetherlands);
                 resolve(diffrenceArray);
             })
             .catch((err) => reject(err));
