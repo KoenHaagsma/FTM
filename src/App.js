@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import BiggestChanges from './BiggestChanges/BiggestChanges.js';
+import DifferenceNetherlands from './DifferenceNetherlands/DifferenceNetherlands.js';
 import { csv } from 'd3';
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
                 </div>
             </div>
             <BiggestChanges />
+            <DifferenceNetherlands />
         </>
     );
 }

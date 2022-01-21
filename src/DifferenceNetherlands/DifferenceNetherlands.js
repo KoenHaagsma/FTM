@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { compareDistance } from '../compareDistanceAllDistricts';
+import { compareDistanceNetherlands } from '../compareDistanceNetherlands';
 
-export default function BiggestChanges() {
+export default function DifferenceNetherlands() {
     const [data, setData] = useState();
 
     useEffect(() => {
         let isMounted = true;
-        compareDistance().then((d) => {
+        compareDistanceNetherlands().then((d) => {
             if (isMounted) setData(d);
         });
         return () => {
