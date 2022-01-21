@@ -25,6 +25,18 @@ const compareDistanceNetherlands = () => {
                     'havovwo_afst',
                     'bibliotheek_afst',
                 ];
+
+                const diffrenceArray = [];
+                for (const key1 in keys) {
+                    const afst2007 = parseFloat(firstLast[0][keys[key1]].split(',').join('.'));
+                    const afst2019 = parseFloat(firstLast[1][keys[key1]].split(',').join('.'));
+                    const differenceObject = {
+                        key: keys[key1],
+                        difference: Math.abs(parseFloat((afst2019 - afst2007).toFixed(2))),
+                    };
+                    diffrenceArray.push(differenceObject);
+                }
+                console.log(diffrenceArray);
             })
             .catch((err) => reject(err));
     });
