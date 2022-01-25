@@ -25,7 +25,6 @@ const compareDistance = () => {
                 const firstLast = [];
                 firstLast.push(netherlands[0]);
                 firstLast.push(netherlands[netherlands.length - 1]);
-                console.log(firstLast);
 
                 //Get all key values of GWB_NAAM
                 const nameOfDistrict = year2007.map((el) => {
@@ -46,7 +45,6 @@ const compareDistance = () => {
                 const keys = [
                     'huisartsenpost_afst',
                     'huisarts_afst',
-                    'ziekenhuis_incl_afst',
                     'ziekenhuis_excl_afst',
                     'basis_afst',
                     'vmbo_afst',
@@ -58,7 +56,6 @@ const compareDistance = () => {
                 const formattedKeys = [
                     'Huisartsenpost',
                     'Huisarts',
-                    'Ziekenhuis_in',
                     'Ziekenhuis_ex',
                     'Basisschool',
                     'VMBO',
@@ -131,9 +128,9 @@ const compareDistance = () => {
                     generalOutput['key'] = formattedKeys[i];
 
                     // Need this for multiple values
-                    const push = [];
-                    push.push(maxOutput);
-                    push.push(generalOutput);
+                    const combined = [];
+                    combined.push(maxOutput);
+                    combined.push(generalOutput);
 
                     output.push(maxOutput);
                     i++;
@@ -158,6 +155,7 @@ const compareDistance = () => {
                         }
                         i++;
                     }
+                    console.log(output);
                     resolve(output);
                 }
                 return output;

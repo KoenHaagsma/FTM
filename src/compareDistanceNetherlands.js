@@ -17,7 +17,6 @@ const compareDistanceNetherlands = () => {
                 const keys = [
                     'huisartsenpost_afst',
                     'huisarts_afst',
-                    'ziekenhuis_incl_afst',
                     'ziekenhuis_excl_afst',
                     'basis_afst',
                     'vmbo_afst',
@@ -43,8 +42,8 @@ const compareDistanceNetherlands = () => {
                     for (const district of districts) {
                         const districtKey = keys[i];
                         const pushOutput = {
-                            districtNaam: district.GWB_NAAM,
-                            districtJaar: district.Jaar,
+                            districtName: district.GWB_NAAM,
+                            districtCode: district.GWB_CODE,
                             districtKey: districtKey,
                         };
                         pushOutput[keys[i]] = district[districtKey];
@@ -52,8 +51,39 @@ const compareDistanceNetherlands = () => {
                     }
                     i++;
                 }
-                console.log(stepsNetherlands);
-                resolve(diffrenceArray);
+
+                // eslint-disable-next-line
+                const formattedKeys = [
+                    'Huisartsenpost',
+                    'Huisarts',
+                    'Ziekenhuis_ex',
+                    'Basisschool',
+                    'VMBO',
+                    'HAVO/VWO',
+                    'Bibliotheek',
+                ];
+
+                const output = [];
+                let a = 0;
+                for (const key1 of keys) {
+                    const districtName = firstLast[0].GWB_NAAM;
+                    const value1 = parseFloat(firstLast[0][key1].split(',').join('.'));
+                    const value2 = parseFloat(firstLast[1][key1].split(',').join('.'));
+
+                    const maxOutput = {
+                        districtName,
+                        districtCode: firstLast[0].GWB_CODE,
+                        value1,
+                        value2,
+                    };
+                    maxOutput['key'] = formattedKeys[a];
+
+                    output.push(maxOutput);
+                    a++;
+                }
+
+                console.log(output);
+                resolve(output);
             })
             .catch((err) => reject(err));
     });

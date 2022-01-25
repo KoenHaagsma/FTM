@@ -1,0 +1,16 @@
+html,
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.d3-container1 {
+    margin-top: 1rem;
+}
+
+.d3-container1 > svg:first-child > g > g:first-child {
+    display: none;
+}
+
+.d3-container1 > svg:first-child > g > g:nth-child(2) {
+    display: none;
+}

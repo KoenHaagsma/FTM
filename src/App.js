@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import LollipopChart from './LollipopChart/LollipopChart.js';
+import SecondLollipopChart from './SecondLollipopChart/SecondLollipopChart.js';
 import { csv } from 'd3';
 import { compareDistance } from './compareDistanceAllDistricts';
-import BiggestChanges from './BiggestChanges/BiggestChanges';
+import { compareDistanceNetherlands } from './compareDistanceNetherlands';
 import Legenda from './Legenda/Legenda.js';
+import Title from './Title/Title';
 
 function App() {
     const [postcode, setPostcode] = useState('');
     const [output, setOutput] = useState(null);
     const [dataShapes, setDataShapes] = useState(null);
     const [data, setData] = useState();
+    const [secondData, setSecondData] = useState();
 
     useEffect(() => {
         let isMounted = true;
@@ -23,8 +26,22 @@ function App() {
     }, []);
 
     useEffect(() => {
+        let isMounted = true;
+        compareDistanceNetherlands().then((d) => {
+            if (isMounted) setSecondData(d);
+        });
+        return () => {
+            isMounted = false;
+        };
+    }, []);
+
+    useEffect(() => {
         console.log(data);
     }, [data]);
+
+    useEffect(() => {
+        console.log(secondData);
+    }, [secondData]);
 
     useEffect(() => {
         const getData = async () => {
@@ -62,9 +79,10 @@ function App() {
                     <button onClick={handleClick}>Zoek andere wijk test tekst</button>
                 </div>
             </div>
+            <Title>De grootste veranderingen van afstand per voorziening in Nederland in vergelijking</Title>
             <Legenda />
             {data && <LollipopChart data={data} />}
-            <BiggestChanges />
+            {secondData && <SecondLollipopChart data={secondData} />}
         </>
     );
 }

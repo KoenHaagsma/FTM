@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
+import './SecondLollipopChart.css'; // Tell webpack that Button.js uses these styles
 
-export default function LollipopChart({ data }) {
+export default function SecondLollipopChart({ data }) {
     useEffect(() => {
         console.log(data);
     }, [data]);
@@ -13,7 +14,7 @@ export default function LollipopChart({ data }) {
 
     useEffect(() => {
         const svg = d3
-            .select('.d3-container')
+            .select('.d3-container1')
             .append('svg')
             .attr('width', width + margin.left + margin.right)
             .attr('height', height + margin.top + margin.bottom)
@@ -34,54 +35,15 @@ export default function LollipopChart({ data }) {
         const groups = formattedKeys;
 
         // Add X axis
-        const x = d3.scaleLinear().domain([0, 40]).range([0, width]);
+        const x = d3.scaleLinear().domain([-5, 45]).range([0, width]);
         svg.append('g').attr('transform', `translate(0, ${height})`).call(d3.axisBottom(x).ticks(5, 'f'));
 
         // Add Y axis
         const y = d3.scaleBand().range([0, height]).domain(groups).padding(1);
         svg.append('g').call(d3.axisLeft(y));
 
-        // // Another scale for subgroup position?
-        // const ySubgroup = d3.scaleBand().domain(subgroups).range([0, y.bandwidth()]).padding([0.05]);
-
-        // // color palette = one color per subgroup
-        // const color = d3.scaleOrdinal().domain(subgroups).range(['#e41a1c', '#377eb8']);
-
-        // // Show the lines
-        // console.log(data);
-        // svg.append('g')
-        //     .selectAll('g')
-        //     // Enter in data = loop group per group
-        //     .data(data)
-        //     .enter()
-        //     .append('g')
-        //     .attr('transform', (d) => {
-        //         d.map((el) => 'translate(' + x(el.key) + ',0)');
-        //     })
-        //     .selectAll('line')
-        //     .data(function (d) {
-        //         return subgroups.map(function (key) {
-        //             return { key: key, value: d[key] };
-        //         });
-        //     })
-        //     .enter()
-        //     .append('line')
-        //     .attr('x', function (d) {
-        //         return ySubgroup(d.key);
-        //     })
-        //     .attr('y', function (d) {
-        //         return y(d.value);
-        //     })
-        //     .attr('width', ySubgroup.bandwidth())
-        //     .attr('height', function (d) {
-        //         return height - y(d.value);
-        //     })
-        //     .attr('fill', function (d) {
-        //         return color(d.key);
-        //     });
-
         // Lines
-        svg.selectAll('myline')
+        svg.selectAll('myline1')
             .data(data)
             .join('line')
             .attr('x1', function (d) {
@@ -96,11 +58,11 @@ export default function LollipopChart({ data }) {
             .attr('y2', function (d) {
                 return y(d.key);
             })
-            .attr('stroke', '#FCB860')
+            .attr('stroke', '#0E5DA0')
             .attr('stroke-width', '1px');
 
         // Circles of variable 1
-        svg.selectAll('mycircle')
+        svg.selectAll('mycircle1')
             .data(data)
             .join('circle')
             .attr('cx', function (d) {
@@ -110,10 +72,10 @@ export default function LollipopChart({ data }) {
                 return y(d.key);
             })
             .attr('r', '4')
-            .style('fill', '#FCB860');
+            .style('fill', '#0E5DA0');
 
         // Circles of variable 2
-        svg.selectAll('mycircle')
+        svg.selectAll('mycircle1')
             .data(data)
             .join('circle')
             .attr('cx', function (d) {
@@ -123,31 +85,19 @@ export default function LollipopChart({ data }) {
                 return y(d.key);
             })
             .attr('r', '4')
-            .style('fill', '#FCB860');
+            .style('fill', '#0E5DA0');
         //eslint-disable-next-line
     }, [data]);
 
-    const styleP = {
-        margin: 0,
-        'font-weight': 'bold',
-        'font-size': '12px',
-        'text-align': 'center',
-        'margin-top': '-1rem',
-    };
-
-    const styleContainer = {
-        position: 'absolute',
-    };
     return (
         <>
-            <div id="container" style={styleContainer}>
+            <div id="container">
                 <svg
-                    className="d3-container"
+                    className="d3-container1"
                     ref={svgRef}
                     height={height + margin.top + margin.bottom}
                     width={width + margin.left + margin.right}
                 />
-                <p style={styleP}>Afstand in KM</p>
             </div>
         </>
     );
