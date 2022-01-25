@@ -72,11 +72,30 @@ const compareDistance = () => {
                             maxValue = difference;
                         }
                     }
+
+                    const districtName = year2019.filter((el) => el.GWB_CODE === maxValue.districtCode)[0].GWB_NAAM;
+                    const value1 = parseFloat(
+                        year2007
+                            .filter((el) => el.GWB_CODE === maxValue.districtCode)[0]
+                            [key1].split(',')
+                            .join('.'),
+                    );
+                    const value2 = parseFloat(
+                        year2019
+                            .filter((el) => el.GWB_CODE === maxValue.districtCode)[0]
+                            [key1].split(',')
+                            .join('.'),
+                    );
+
                     const maxOutput = {
-                        districtName: year2019.filter((el) => el.GWB_CODE === maxValue.districtCode)[0].GWB_NAAM,
+                        districtName,
                         districtCode: maxValue.districtCode,
+                        key: key1,
+                        value1,
+                        value2,
                     };
                     maxOutput[`${key1}_difference`] = maxValue[`${key1}_difference`];
+                    console.log(maxOutput);
                     output.push(maxOutput);
                 }
 
@@ -99,7 +118,7 @@ const compareDistance = () => {
                         }
                         i++;
                     }
-                    console.log(testArray);
+                    console.log(output);
                     resolve(output);
                 }
                 return output;

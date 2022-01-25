@@ -1,13 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import BiggestChanges from './BiggestChanges/BiggestChanges.js';
-import DifferenceNetherlands from './DifferenceNetherlands/DifferenceNetherlands.js';
+import LollipopChart from './LollipopChart/LollipopChart.js';
 import { csv } from 'd3';
+import { compareDistance } from './compareDistanceAllDistricts';
+import BiggestChanges from './BiggestChanges/BiggestChanges';
 
 function App() {
     const [postcode, setPostcode] = useState('');
     const [output, setOutput] = useState(null);
     const [dataShapes, setDataShapes] = useState(null);
+    const [data, setData] = useState();
+
+    useEffect(() => {
+        let isMounted = true;
+        compareDistance().then((d) => {
+            if (isMounted) setData(d);
+        });
+        return () => {
+            isMounted = false;
+        };
+    }, []);
+
+    useEffect(() => {
+        console.log(data);
+    }, [data]);
 
     useEffect(() => {
         const getData = async () => {
@@ -45,8 +61,8 @@ function App() {
                     <button onClick={handleClick}>Zoek andere wijk test tekst</button>
                 </div>
             </div>
+            {data && <LollipopChart data={data} />}
             <BiggestChanges />
-            <DifferenceNetherlands />
         </>
     );
 }

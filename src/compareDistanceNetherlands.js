@@ -13,7 +13,6 @@ const compareDistanceNetherlands = () => {
                 const firstLast = [];
                 firstLast.push(netherlands[0]);
                 firstLast.push(netherlands[netherlands.length - 1]);
-                console.log(firstLast);
 
                 const keys = [
                     'huisartsenpost_afst',
