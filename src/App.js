@@ -4,6 +4,7 @@ import LollipopChart from './LollipopChart/LollipopChart.js';
 import { csv } from 'd3';
 import { compareDistance } from './compareDistanceAllDistricts';
 import BiggestChanges from './BiggestChanges/BiggestChanges';
+import Legenda from './Legenda/Legenda.js';
 
 function App() {
     const [postcode, setPostcode] = useState('');
@@ -61,6 +62,7 @@ function App() {
                     <button onClick={handleClick}>Zoek andere wijk test tekst</button>
                 </div>
             </div>
+            <Legenda />
             {data && <LollipopChart data={data} />}
             <BiggestChanges />
         </>
