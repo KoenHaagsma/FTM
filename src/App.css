@@ -1,17 +1,156 @@
 body {
   font-family: "Open Sans", sans-serif;
+  background-color: #d5e7e9;
+}
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 60px;
+  background-color: #292f32;
+  color: white;
+  max-width: 430px;
+  z-index: 10;
+  margin-bottom: -10px;
+  position: sticky;
+  top: 0;
 }
 
-.container h1 {
+.containerWordMark {
+  margin-left: -25px;
+  margin-right: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.containerMenu{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #353A3C;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.containerMenu{
+  font-size: 10px;
+}
+
+.containerSearch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #353A3C;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-right: -53px;
+}
+.wordmark {
+  height: 25px;
+  width: auto;
+}
+.container {
+  padding-top: 80px!important;
+  padding: 20px;
+  height: 200vh;
+  position: relative;
+  overflow: hidden;
+  max-width: 390px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.09);
+  border-radius: 8px;
+  background: white;
+}
+.container h1,
+.container p {
   margin: 0 32px;
+}
+
+.titel {
+  margin-bottom: 10px;
 }
 .container h1 {
   font-size: 25px;
 }
 
-.container h1 span{
+.container h1 span {
   color: grey;
 }
+.walking {
+  margin-bottom: 150px;
+}
+.dropDownImage {
+  margin-left: 32px;
+  margin-right: 32px;
+}
+
+.title h1 {
+  font-size: 16px;
+  padding-top: 50px;
+}
+
+.stappen {
+  text-align: right;
+  z-index: 5;
+  margin-top: -6px;
+}
+.stappen .s {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-right: 4px;
+}
+.scroll-wrapper {
+  position: relative;
+  height: 300px;
+  width: 100%;
+}
+.backdrop {
+  height: 300px;
+  width: 100%;
+  background-color: green;
+  background-image: url("./assets/dorpje.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+.backdrop::-webkit-scrollbar {
+  display: none;
+}
+.backdrop img {
+  height: 100%;
+}
+
+.person {
+  z-index: 2;
+  position: absolute;
+  left: 10px;
+  bottom: 35px;
+  height: 40px;
+  width: 40px;
+}
+.person img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.step-range {
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 19px;
+  width: 100%;
+  height: 8px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.step-range .progress {
+  height: 100%;
+  background-color: red;
+}
+
 .area-code {
   margin: 10px 32px;
   display: flex;
@@ -26,6 +165,7 @@ body {
 }
 
 .area-code p {
+  margin-left: 0px !important;
   margin-right: 10px;
   font-size: 15px;
 }
@@ -40,18 +180,46 @@ body {
   width: 100%;
   border-top: 1px solid grey;
   border-bottom: 1px solid grey;
-
 }
 .years button {
   width: 50%;
   background-color: Transparent;
   border: none;
-  padding: 5px
+  padding: 5px;
 }
 .years button:active {
   border-bottom: red solid 2px;
 }
-.years button:first-child{
+.years button:first-child {
   border-right: 1px solid grey;
-  border-bottom: red solid 2px;
+}
+
+.radar-chart {
+  width: 600px;
+  height: 500px;
+}
+
+.first-year {
+  height: 10px;
+  width: 30px;
+  background-color: #dba2d4;
+}
+
+.last-year {
+  height: 10px;
+  width: 30px;
+  background-color: #a00005;
+}
+.distance {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
+.distance span {
+  margin-right: 5px;
+}
+
+.radar.radar-Chart {
+  margin-left: -40px !important;
 }
