@@ -3,7 +3,6 @@ import "../App.css";
 import { csv } from "d3";
 import RadarCharts from "../Components/RadarChart";
 import radarchartimage from "../assets/radarchart.png"
-
 const ChartContainer = () => {
   const [postcode, setPostcode] = useState("");
   const [output, setOutput] = useState(null);
@@ -15,13 +14,13 @@ const ChartContainer = () => {
   const [error, setError] = useState(null);
   useEffect(() => {
     const getData = async () => {
-      await fetch("/data_shapes.json")
+      await fetch("../../public/data_shapes.json")
         .then((response) => response.json())
         .then((data) => {
           setDataShapes(data);
         });
 
-      const response = await csv("./output.csv");
+      const response = await csv("../../public/output.csv");
       setOutput(response);
     };
 
