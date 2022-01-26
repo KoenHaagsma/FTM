@@ -271,6 +271,7 @@ header {
 .bronnen > ul > li {
     list-style: none;
     padding: 0.1rem 0;
+    max-width: 280px;
 }
 
 .bronnen > ul > li > a {
