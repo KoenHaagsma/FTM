@@ -32,7 +32,7 @@ export default function BiggestChangesList({ data }) {
                 <ul style={styleUl}>
                     {data.map((district, index) => (
                         <li key={index} style={styleLi}>
-                            {district.key}: {district.districtName}
+                            <b>{district.key}:</b> {district.districtName}
                         </li>
                     ))}
                 </ul>
