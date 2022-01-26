@@ -22,10 +22,15 @@ export default function Legenda() {
         'font-size': '11px',
     };
 
+    const styleUl = {
+        padding: '0',
+        marginLeft: '2rem',
+    };
+
     return (
         <>
             <div id="container">
-                <ul>
+                <ul style={styleUl}>
                     <li style={styleLi}>
                         <div style={styleSquare1}></div>Grootste verandering van afstand
                     </li>
