@@ -10,7 +10,8 @@ export default function BiggestChangesList({ data }) {
 
     const styleLi = {
         padding: '.25rem 0',
-        fontSize: '11px',
+        fontSize: '12px',
+        lineHeight: '20px',
     };
 
     const styleLiTitle = {
