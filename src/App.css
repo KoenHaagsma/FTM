@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
   background-color: #d5e7e9;
 }
 header {
@@ -17,21 +19,20 @@ header {
 }
 
 .containerWordMark {
-  margin-left: -25px;
   margin-right: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.containerMenu{
+.containerMenu {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #353A3C;
+  background: #353a3c;
   padding-right: 10px;
   padding-left: 10px;
 }
-.containerMenu{
+.containerMenu {
   font-size: 10px;
 }
 
@@ -39,22 +40,19 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #353A3C;
+  background: #353a3c;
   padding-right: 10px;
   padding-left: 10px;
-  margin-right: -53px;
 }
 .wordmark {
   height: 25px;
   width: auto;
 }
 .container {
-  padding-top: 80px!important;
-  padding: 20px;
-  height: 200vh;
+  min-height: 800vh;
   position: relative;
   overflow: hidden;
-  max-width: 390px;
+  max-width: 430px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.09);
   border-radius: 8px;
   background: white;
@@ -68,19 +66,20 @@ header {
   margin-bottom: 10px;
 }
 .container h1 {
-  font-size: 25px;
+  font-size: 24px;
 }
 
 .container h1 span {
   color: grey;
 }
-.walking {
-  margin-bottom: 150px;
-}
 .dropDownImage {
   margin-left: 32px;
   margin-right: 32px;
 }
+.walking {
+  margin-bottom: 50px;
+}
+
 
 .title h1 {
   font-size: 16px;
@@ -91,6 +90,8 @@ header {
   text-align: right;
   z-index: 5;
   margin-top: -6px;
+  padding-left: -10px;
+  padding-right: -10px;
 }
 .stappen .s {
   font-weight: bold;
@@ -147,6 +148,7 @@ header {
   background-color: rgba(0, 0, 0, 0.1);
 }
 .step-range .progress {
+  max-width: 100%;
   height: 100%;
   background-color: red;
 }
@@ -156,6 +158,14 @@ header {
   display: flex;
   align-items: center;
 }
+
+.dropDownImage select {
+  height: 1.5em;
+  border: solid grey 2px;
+  border-radius: 1em;
+  padding-left: 1em;
+}
+
 .area-code input {
   width: 13em;
   height: 1.5em;
@@ -202,13 +212,13 @@ header {
 .first-year {
   height: 10px;
   width: 30px;
-  background-color: #dba2d4;
+  background-color: #fca77f;
 }
 
 .last-year {
   height: 10px;
   width: 30px;
-  background-color: #a00005;
+  background-color: #842f00;
 }
 .distance {
   display: flex;
@@ -220,6 +230,62 @@ header {
   margin-right: 5px;
 }
 
-.radar.radar-Chart {
-  margin-left: -40px !important;
+.radarchartimg {
+  height: auto;
+  width: 420px;
+}
+
+.duinen {
+  width: 414px;
+  height: auto;
+}
+
+.imgcaption {
+  color: rgb(122, 132, 141);
+  font-size: 12px;
+}
+.artikelbeschrijving {
+  display: flex;
+  color: grey;
+  font-weight: 200;
+  font-size: 13px;
+  margin-left: 32px;
+  align-items: center;
+}
+
+.artikelbeschrijving img {
+  height: 13px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.schrijvers {
+  margin-left: 32px;
+  display: flex;
+  color: rgb(228, 93, 92);
+  font-size: 10px;
+}
+.schrijvers h3 {
+  margin-right: 10px;
+}
+.inleidingp {
+  font-size: 13px;
+  font-weight: 700;
+}
+.artikeltekst{
+  margin-top: 20px!important;
+  margin-bottom: 20px!important;
+  font-size: 11px;
+}
+
+.zipcaption{
+  color: grey;
+font-size: 10px;
+margin-top: -5px!important;
+margin-bottom: 5px!important;
+}
+
+.error{
+  font-size: 13px;
+  color: rgb(158, 0, 0);
 }

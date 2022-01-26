@@ -1,7 +1,7 @@
-import person from "./assets/ChibiGIF.gif";
-import bg from "./assets/dorpje.png";
-import bg2 from "./assets/dorpje2.png";
-import bg3 from "./assets/dorpje3.png";
+import person from "../assets/ChibiGIF.gif";
+import bg from "../assets/Lidl.png";
+import bg2 from "../assets/Cafe.png";
+import bg3 from "../assets/dorpje.png";
 
 import { useEffect, useState } from "react";
 

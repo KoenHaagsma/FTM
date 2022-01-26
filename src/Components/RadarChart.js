@@ -1,17 +1,17 @@
 import React, { useEffect, useRef } from "react";
 import * as d3 from "d3";
 
-function RadarCharts({ datas }) {
+function RadarCharts({ data, firstYear, lastYear }) {
   const svgRef = useRef();
   useEffect(() => {
     if (svgRef.current) {
       const svg = d3.select(svgRef.current);
       drawChart(svg);
-    }
-  }, [svgRef, datas]);
+    }// eslint-disable-next-line
+  }, [svgRef, data]);
 
   const drawChart = (svg) => {
-    var margin = { top: 100, right: 100, bottom: 100, left: 50 },
+    var margin = { top: 100, right: 70, bottom: 100, left: 70 },
       width =
         Math.min(700, window.innerWidth - 10) - margin.left - margin.right,
       height = Math.min(
@@ -19,8 +19,7 @@ function RadarCharts({ datas }) {
         window.innerHeight - margin.top - margin.bottom - 20
       );
 
-    var color = d3.scaleBand().range(["#dba2d4", "#a00005"]);
-    const data = [datas[0], datas[datas.length - 1]];
+    var color = d3.scaleOrdinal().domain([firstYear, lastYear]).range(["#fca77f", "#842f00"])
     var radarChartOptions = {
       w: width,
       h: height,
@@ -35,19 +34,19 @@ function RadarCharts({ datas }) {
 
     function RadarChart(id, data, options) {
       var cfg = {
-        w: 60, //Width of the circle
-        h: 60, //Height of the circle
+        w: 600, //Width of the circle
+        h: 600, //Height of the circle
         margin: { top: 20, right: 20, bottom: 20, left: 20 }, //The margins of the SVG
         levels: 3, //How many levels or inner circles should there be drawn
         maxValue: 0, //What is the value that the biggest circle will represent
         labelFactor: 1.25, //How much farther than the radius of the outer circle should the labels be placed
         wrapWidth: 60, //The number of pixels after which a label needs to be given a new line
-        opacityArea: 0.35, //The opacity of the area of the blob
+        opacityArea: 0.6, //The opacity of the area of the blob
         dotRadius: 4, //The size of the colored circles of each blog
         opacityCircles: 0.1, //The opacity of the circles of each blob
         strokeWidth: 2, //The width of the stroke around each blob
         roundStrokes: false, //If true the area and stroke will follow a round path (cardinal-closed)
-        color: ["#dba2d4", "#a00005"], //Color function
+        color: d3.scaleOrdinal().domain([firstYear, lastYear]).range(["#fca77f", "#842f00"]), //Color function
       };
 
       //Put all of the options into a variable called cfg
@@ -82,7 +81,7 @@ function RadarCharts({ datas }) {
       //Scale for the radius
       var rScale = d3.scaleLinear().range([0, radius]).domain([0, maxValue]);
 
-      //Remove whatever chart with theC same id/class was present before
+      //Remove whatever chart with the same id/class was present before
 
       svg.selectAll("*").remove();
 
@@ -105,13 +104,13 @@ function RadarCharts({ datas }) {
         );
 
       //Filter for the outside glow
-      var filter = g.append("defs").append("filter").attr("id", "glow"),
+      var filter = g.append("defs").append("filter").attr("id", "glow"),// eslint-disable-next-line
         feGaussianBlur = filter
           .append("feGaussianBlur")
           .attr("stdDeviation", "2.5")
           .attr("result", "coloredBlur"),
-        feMerge = filter.append("feMerge"),
-        feMergeNode_1 = feMerge.append("feMergeNode").attr("in", "coloredBlur"),
+        feMerge = filter.append("feMerge"),// eslint-disable-next-line
+        feMergeNode_1 = feMerge.append("feMergeNode").attr("in", "coloredBlur"),// eslint-disable-next-line
         feMergeNode_2 = feMerge
           .append("feMergeNode")
           .attr("in", "SourceGraphic");
@@ -205,7 +204,7 @@ function RadarCharts({ datas }) {
       //The radial line function
       var radarLine = d3
         .lineRadial()
-        .curve(d3.curveCardinalClosed)
+        .curve(d3.curveLinearClosed)
         .radius(function (d) {
           return rScale(d.value);
         })
@@ -232,7 +231,7 @@ function RadarCharts({ datas }) {
           return radarLine(d);
         })
         .style("fill", function (d, i) {
-          return i === 0 ? "#dba2d4" : "#a00005";
+          return cfg.color(d.map(d => d.year)[0])
         })
         .style("fill-opacity", cfg.opacityArea)
         .on("mouseover", function (d, i) {
@@ -260,9 +259,7 @@ function RadarCharts({ datas }) {
           return radarLine(d);
         })
         .style("stroke-width", cfg.strokeWidth + "px")
-        .style("stroke", function (d, i) {
-          return cfg.color(i);
-        })
+        .style("stroke", 'none')
         .style("fill", "none")
         .style("filter", "url(#glow)");
 
@@ -282,8 +279,8 @@ function RadarCharts({ datas }) {
         .attr("cy", function (d, i) {
           return rScale(d.value) * Math.sin(angleSlice * i - Math.PI / 2);
         })
-        .style("fill", function (d, i, j) {
-          return cfg.color(j);
+        .style("fill", function (d, i) {
+          return cfg.color(d.year);
         })
         .style("fill-opacity", 0.8);
 
@@ -376,10 +373,6 @@ function RadarCharts({ datas }) {
 
   return (
     <div>
-      <div className="years">
-        <button>2007</button>
-        <button>2019</button>
-      </div>
       <svg className="radarChart container" ref={svgRef}></svg>
     </div>
   );
