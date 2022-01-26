@@ -87,7 +87,7 @@ export default function SecondLollipopChart({ data }) {
 
     return (
         <>
-            <div id="container">
+            <div id="container" className="spinner">
                 <svg
                     className="d3-container1"
                     ref={svgRef}

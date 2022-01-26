@@ -6,6 +6,7 @@ import { compareDistance } from '../compareDistanceAllDistricts';
 import { compareDistanceNetherlands } from '../compareDistanceNetherlands';
 import Legenda from '../Legenda/Legenda.js';
 import Title from '../Title/Title';
+import './style.css';
 
 function SecondChartContainer() {
     const [data, setData] = useState();
@@ -35,8 +36,10 @@ function SecondChartContainer() {
         <>
             <Title>De grootste veranderingen van afstand per voorziening in Nederland in vergelijking</Title>
             <Legenda />
-            {data && <LollipopChart data={data} />}
-            {secondData && <SecondLollipopChart data={secondData} />}
+            <div className="spinner">
+                {data && secondData && <LollipopChart data={data} />}
+                {data && secondData && <SecondLollipopChart data={secondData} />}
+            </div>
         </>
     );
 }
