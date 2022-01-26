@@ -2,10 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 
 export default function LollipopChart({ data }) {
-    useEffect(() => {
-        console.log(data);
-    }, [data]);
-
     const svgRef = useRef();
     const margin = { top: 10, right: 30, bottom: 40, left: 80 },
         width = 375 - margin.left - margin.right,

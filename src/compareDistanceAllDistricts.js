@@ -73,8 +73,6 @@ const compareDistance = () => {
                     differenceArray.push(difference);
                 }
 
-                console.log(differenceArray);
-
                 // Get first and last value from specific object
                 const output = [];
                 let i = 0;
@@ -132,7 +130,6 @@ const compareDistance = () => {
                         }
                         i++;
                     }
-                    console.log(output);
                     resolve(output);
                 }
                 return output;
