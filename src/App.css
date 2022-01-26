@@ -49,7 +49,6 @@ header {
     width: auto;
 }
 .container {
-    min-height: 800vh;
     position: relative;
     overflow: hidden;
     max-width: 430px;
