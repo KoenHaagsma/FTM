@@ -153,7 +153,7 @@ const ChartContainer = () => {
                 />
                 <button onClick={handleClick}>🔎</button>
             </div>
-            <p className="zipcaption">Postcodes om uit te proberen: 4513AA, 9534TA, 2012BA, 2012BA</p>
+            <p className="zipcaption">Postcodes om uit te proberen: 4513AA, 9534TA, 2012BA.</p>
             {error && <p className="error">{error}</p>}
             {firstYear && (
                 <div className="years">
