@@ -1,7 +1,8 @@
 # ⚙ Follow the money design project
 
-![Image of full mobile article](./screenshot2.png)
+<img src="https://github.com/KoenHaagsma/FTM/blob/main/Screen1.png" width="300px" alt="Screen"><img src="https://github.com/KoenHaagsma/FTM/blob/main/Screen2.png" width="300px" alt="Screen"><img src="https://github.com/KoenHaagsma/FTM/blob/main/Screen3.png" width="300px" alt="Screen"><img src="https://github.com/KoenHaagsma/FTM/blob/main/Screen4.png" width="300px" alt="Screen"><img src="https://github.com/KoenHaagsma/FTM/blob/main/Screen5.png" width="300px" alt="Screen">
 
+                                                                  
 ## 📂 Assignment
 How can we visualize the impoverishment in the Netherlands for the readers of Follow The Money (in a narrative) way for mobile screens?
 
