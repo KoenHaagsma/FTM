@@ -1,291 +1,295 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 body {
-  font-family: "IBM Plex Sans", sans-serif;
-  background-color: #d5e7e9;
+    font-family: 'IBM Plex Sans', sans-serif;
+    background-color: #d5e7e9;
 }
 header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  height: 60px;
-  background-color: #292f32;
-  color: white;
-  max-width: 430px;
-  z-index: 10;
-  margin-bottom: -10px;
-  position: sticky;
-  top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 60px;
+    background-color: #292f32;
+    color: white;
+    max-width: 430px;
+    z-index: 10;
+    margin-bottom: -10px;
+    position: sticky;
+    top: 0;
 }
 
 .containerWordMark {
-  margin-right: 25px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    margin-right: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .containerMenu {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #353a3c;
-  padding-right: 10px;
-  padding-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #353a3c;
+    padding-right: 10px;
+    padding-left: 10px;
 }
 .containerMenu {
-  font-size: 10px;
+    font-size: 10px;
 }
 
 .containerSearch {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #353a3c;
-  padding-right: 10px;
-  padding-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #353a3c;
+    padding-right: 10px;
+    padding-left: 10px;
 }
 .wordmark {
-  height: 25px;
-  width: auto;
+    height: 25px;
+    width: auto;
 }
 .container {
-  min-height: 800vh;
-  position: relative;
-  overflow: hidden;
-  max-width: 430px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.09);
-  border-radius: 8px;
-  background: white;
+    min-height: 800vh;
+    position: relative;
+    overflow: hidden;
+    max-width: 430px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.09);
+    border-radius: 8px;
+    background: white;
 }
 .container h1,
 .container p {
-  margin: 0 32px;
+    margin: 0 32px;
 }
 
 .titel {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
+
+.titel > p {
+    margin-top: 4px;
+}
+
 .container h1 {
-  font-size: 24px;
+    font-size: 24px;
 }
 
 .container h1 span {
-  color: grey;
+    color: grey;
 }
 .dropDownImage {
-  margin-left: 32px;
-  margin-right: 32px;
+    margin-left: 32px;
+    margin-right: 32px;
 }
 .walking {
-  margin-bottom: 50px;
+    margin-bottom: 50px;
 }
 
-
 .title h1 {
-  font-size: 16px;
-  padding-top: 50px;
+    font-size: 16px;
+    padding-top: 50px;
 }
 
 .stappen {
-  text-align: right;
-  z-index: 5;
-  margin-top: -6px;
-  padding-left: -10px;
-  padding-right: -10px;
+    text-align: right;
+    z-index: 5;
+    margin-top: -3px;
+    padding-left: -10px;
+    padding-right: -10px;
 }
 .stappen .s {
-  font-weight: bold;
-  font-size: 1.2em;
-  margin-right: 4px;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-right: 4px;
 }
 .scroll-wrapper {
-  position: relative;
-  height: 300px;
-  width: 100%;
+    position: relative;
+    height: 300px;
+    width: 100%;
 }
 .backdrop {
-  height: 300px;
-  width: 100%;
-  background-color: green;
-  background-image: url("./assets/dorpje.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  z-index: 1;
-  overflow-x: scroll;
-  overflow-y: hidden;
+    height: 300px;
+    width: 100%;
+    background-color: green;
+    background-image: url('./assets/dorpje.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    overflow-x: scroll;
+    overflow-y: hidden;
 }
 .backdrop::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 .backdrop img {
-  height: 100%;
+    height: 100%;
 }
 
 .person {
-  z-index: 2;
-  position: absolute;
-  left: 10px;
-  bottom: 35px;
-  height: 40px;
-  width: 40px;
+    z-index: 2;
+    position: absolute;
+    left: 10px;
+    bottom: 35px;
+    height: 40px;
+    width: 40px;
 }
 .person img {
-  max-width: 100%;
-  max-height: 100%;
+    max-width: 100%;
+    max-height: 100%;
 }
 .step-range {
-  z-index: 2;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 19px;
-  width: 100%;
-  height: 8px;
-  background-color: rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 19px;
+    width: 100%;
+    height: 8px;
+    background-color: rgba(0, 0, 0, 0.1);
 }
 .step-range .progress {
-  max-width: 100%;
-  height: 100%;
-  background-color: red;
+    max-width: 100%;
+    height: 100%;
+    background-color: red;
 }
 
 .area-code {
-  margin: 10px 32px;
-  display: flex;
-  align-items: center;
+    margin: 10px 32px;
+    display: flex;
+    align-items: center;
 }
 
 .dropDownImage select {
-  height: 1.5em;
-  border: solid grey 2px;
-  border-radius: 1em;
-  padding-left: 1em;
+    height: 1.5em;
+    border: solid grey 2px;
+    border-radius: 1em;
+    padding-left: 1em;
 }
 
 .area-code input {
-  width: 13em;
-  height: 1.5em;
-  border: solid grey 2px;
-  border-radius: 1em;
-  padding-left: 1em;
+    width: 13em;
+    height: 1.5em;
+    border: solid grey 2px;
+    border-radius: 1em;
+    padding-left: 1em;
 }
 
 .area-code p {
-  margin-left: 0px !important;
-  margin-right: 10px;
-  font-size: 15px;
+    margin-left: 0px !important;
+    margin-right: 10px;
+    font-size: 15px;
 }
 
 .area-code button {
-  border: none;
-  background-color: Transparent;
-  margin-left: -30px;
+    border: none;
+    background-color: Transparent;
+    margin-left: -30px;
 }
 .years {
-  display: flex;
-  width: 100%;
-  border-top: 1px solid grey;
-  border-bottom: 1px solid grey;
+    display: flex;
+    width: 100%;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
 }
 .years button {
-  width: 50%;
-  background-color: Transparent;
-  border: none;
-  padding: 5px;
+    width: 50%;
+    background-color: Transparent;
+    border: none;
+    padding: 5px;
 }
 .years button:active {
-  border-bottom: red solid 2px;
+    border-bottom: red solid 2px;
 }
 .years button:first-child {
-  border-right: 1px solid grey;
+    border-right: 1px solid grey;
 }
 
 .radar-chart {
-  width: 600px;
-  height: 500px;
+    width: 600px;
+    height: 500px;
 }
 
 .first-year {
-  height: 10px;
-  width: 30px;
-  background-color: #fca77f;
+    height: 10px;
+    width: 30px;
+    background-color: #fca77f;
 }
 
 .last-year {
-  height: 10px;
-  width: 30px;
-  background-color: #842f00;
+    height: 10px;
+    width: 30px;
+    background-color: #842f00;
 }
 .distance {
-  display: flex;
-  align-items: center;
-  justify-items: center;
+    display: flex;
+    align-items: center;
+    justify-items: center;
 }
 
 .distance span {
-  margin-right: 5px;
+    margin-right: 5px;
 }
 
 .radarchartimg {
-  height: auto;
-  width: 420px;
+    height: auto;
+    width: 420px;
 }
 
 .duinen {
-  width: 414px;
-  height: auto;
+    width: 414px;
+    height: auto;
 }
 
 .imgcaption {
-  color: rgb(122, 132, 141);
-  font-size: 12px;
+    color: rgb(122, 132, 141);
+    font-size: 12px;
 }
 .artikelbeschrijving {
-  display: flex;
-  color: grey;
-  font-weight: 200;
-  font-size: 13px;
-  margin-left: 32px;
-  align-items: center;
+    display: flex;
+    color: grey;
+    font-weight: 200;
+    font-size: 13px;
+    margin-left: 32px;
+    align-items: center;
 }
 
 .artikelbeschrijving img {
-  height: 13px;
-  margin-left: 5px;
-  margin-right: 5px;
+    height: 13px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .schrijvers {
-  margin-left: 32px;
-  display: flex;
-  color: rgb(228, 93, 92);
-  font-size: 10px;
+    margin-left: 32px;
+    display: flex;
+    color: rgb(228, 93, 92);
+    font-size: 10px;
 }
 .schrijvers h3 {
-  margin-right: 10px;
+    margin-right: 10px;
 }
 .inleidingp {
-  font-size: 13px;
-  font-weight: 700;
+    font-size: 13px;
+    font-weight: 700;
 }
-.artikeltekst{
-  margin-top: 20px!important;
-  margin-bottom: 20px!important;
-  font-size: 11px;
-}
-
-.zipcaption{
-  color: grey;
-font-size: 10px;
-margin-top: -5px!important;
-margin-bottom: 5px!important;
+.artikeltekst {
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+    font-size: 11px;
 }
 
-.error{
-  font-size: 13px;
-  color: rgb(158, 0, 0);
+.zipcaption {
+    color: grey;
+    font-size: 10px;
+    margin-top: -5px !important;
+    margin-bottom: 5px !important;
+}
+
+.error {
+    font-size: 13px;
+    color: rgb(158, 0, 0);
 }
