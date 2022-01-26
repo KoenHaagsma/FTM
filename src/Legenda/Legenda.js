@@ -35,7 +35,7 @@ export default function Legenda() {
                         <div style={styleSquare1}></div>Grootste verandering van afstand
                     </li>
                     <li style={styleLi}>
-                        <div style={styleSquare3}></div>Gemiddelde verandering van afstand in nederland
+                        <div style={styleSquare3}></div>Gemiddelde verandering van afstand in Nederland
                     </li>
                 </ul>
             </div>
