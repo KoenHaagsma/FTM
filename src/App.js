@@ -12,11 +12,11 @@ function App() {
         <div>
             <Header />
             <div className="container">
-                <img className="duinen" src={duinen}></img>
+                <img className="duinen" src={duinen} alt=""></img>
                 <p className="imgcaption">Het dorp Kats op Noord-Beveland, Zeeland. © Daniel Niessen</p>
                 <div className="artikelbeschrijving">
                     <h3>13 OKT 2021 ·</h3>
-                    <img src={klok}></img>
+                    <img src={klok} alt=""></img>
                     <h3> 15 MIN</h3>
                 </div>
                 <h1>Het platteland verliest zijn voorzieningen en dat vergroot de ongelijkheid</h1>
