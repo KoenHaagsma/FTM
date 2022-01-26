@@ -1,52 +1,90 @@
-import React, { useState, useEffect } from 'react';
-import './App.css';
-import { csv } from 'd3';
-import SecondChartContainer from './SecondChartContainer/SecondChartContainer';
+import React from "react";
+import "./App.css";
+import Header from "./Components/Header";
+import Walking from "./Components/Walking";
+import ChartContainer from "./Containers/ChartContainer";
+import duinen from "./assets/duinen.png";
+import klok from "./assets/klokicon.svg";
 
 function App() {
-    const [postcode, setPostcode] = useState('');
-    const [output, setOutput] = useState(null);
-    const [dataShapes, setDataShapes] = useState(null);
-
-    useEffect(() => {
-        const getData = async () => {
-            await fetch('/data_shapes.json')
-                .then((response) => response.json())
-                .then((data) => {
-                    setDataShapes(data);
-                });
-
-            const response = await csv('./output.csv');
-            setOutput(response);
-        };
-
-        getData();
-    }, []);
-
-    const handleClick = () => {
-        const areaCode = postcode.toUpperCase();
-        let result = output.filter((d) => d.PC6 === areaCode)[0];
-        let dataShape = dataShapes.filter((d) => d.GWB_CODE.includes(result.Buurt2019));
-        console.log(dataShape);
-    };
-
-    return (
-        <>
-            <div className="container">
-                <div className="area-code">
-                    <input
-                        placeholder="Postcode"
-                        maxLength="6"
-                        id="code"
-                        value={postcode}
-                        onChange={(e) => setPostcode(e.target.value)}
-                    />
-                    <button onClick={handleClick}>Zoek andere wijk test tekst</button>
-                </div>
-            </div>
-            <SecondChartContainer />
-        </>
-    );
+  return (
+    <div>
+      <Header />
+      <div className="container">
+        <img className="duinen" src={duinen}></img>
+        <p className="imgcaption">
+          Het dorp Kats op Noord-Beveland, Zeeland. © Daniel Niessen
+        </p>
+        <div className="artikelbeschrijving">
+          <h3>13 OKT 2021 ·</h3>
+          <img src={klok}></img>
+          <h3> 15 MIN</h3>
+        </div>
+        <h1>
+          Het platteland verliest zijn voorzieningen en dat vergroot de
+          ongelijkheid
+        </h1>
+        <div className="schrijvers">
+          <h3>CAROLIN JASCHECK</h3>
+          <h3>JABIR TISOUDALI</h3>
+          <h3>KOEN HAAGSMA</h3>
+        </div>
+        <p className="inleidingp">
+          Belangrijke publieke voorzieningen verschralen in een hoog tempo. Zo
+          sloot een op de tien basisscholen, verdwenen tientallen politieposten
+          en wonen steeds meer Nederlanders niet in de buurt van een ziekenhuis
+          of ov-verbinding. Follow the Money en De Groene Amsterdammer
+          onderzoeken ‘de zichtbare overheid’. Die blijkt vooral aan de randen
+          van Nederland steeds minder gemakkelijk te vinden. ‘Er wordt
+          schandalig met ons omgegaan.’
+        </p>
+        <p className='artikeltekst'>
+          Het Zeeuwse Kats, een klein dorp aan de oostkant van het eiland
+          Noord-Beveland, beleefde AD 2013 een kleine ramp. De basisschool sloot
+          en de 450 inwoners kwamen zo voor het eerst in bijna vier eeuwen
+          zonder school te zitten. De dichtstbijzijnde ligt nu vijf kilometer
+          verderop. ‘Bij het ontstaan van Kats in 1598 had je herenboeren en
+          mensen die op het veld werkten,’ vertelt de journalist Jan Schuurman
+          Hess (PvdA) over zijn woonplaats. Vanuit zijn werkkamer met
+          boekenkasten en een gerieflijke leesfauteuil heeft hij weids uitzicht
+          over de akkers en graslanden van Noord-Beveland. ‘Er waren twee dingen
+          die destijds als eerste werden opgericht,’ zegt hij. ‘Dat was de
+          school, en pas daarna de kerk. Vanaf het begin van de 17e eeuw was
+          hier onderwijs. En nu is er geen onderwijs meer.’
+        </p>
+        <Walking />
+        <p className='artikeltekst'>
+          Het Zeeuwse Kats, een klein dorp aan de oostkant van het eiland
+          Noord-Beveland, beleefde AD 2013 een kleine ramp. De basisschool sloot
+          en de 450 inwoners kwamen zo voor het eerst in bijna vier eeuwen
+          zonder school te zitten. De dichtstbijzijnde ligt nu vijf kilometer
+          verderop. ‘Bij het ontstaan van Kats in 1598 had je herenboeren en
+          mensen die op het veld werkten,’ vertelt de journalist Jan Schuurman
+          Hess (PvdA) over zijn woonplaats. Vanuit zijn werkkamer met
+          boekenkasten en een gerieflijke leesfauteuil heeft hij weids uitzicht
+          over de akkers en graslanden van Noord-Beveland. ‘Er waren twee dingen
+          die destijds als eerste werden opgericht,’ zegt hij. ‘Dat was de
+          school, en pas daarna de kerk. Vanaf het begin van de 17e eeuw was
+          hier onderwijs. En nu is er geen onderwijs meer.’
+        </p>
+        <ChartContainer />
+        <p className='artikeltekst'>
+          Het Zeeuwse Kats, een klein dorp aan de oostkant van het eiland
+          Noord-Beveland, beleefde AD 2013 een kleine ramp. De basisschool sloot
+          en de 450 inwoners kwamen zo voor het eerst in bijna vier eeuwen
+          zonder school te zitten. De dichtstbijzijnde ligt nu vijf kilometer
+          verderop. ‘Bij het ontstaan van Kats in 1598 had je herenboeren en
+          mensen die op het veld werkten,’ vertelt de journalist Jan Schuurman
+          Hess (PvdA) over zijn woonplaats. Vanuit zijn werkkamer met
+          boekenkasten en een gerieflijke leesfauteuil heeft hij weids uitzicht
+          over de akkers en graslanden van Noord-Beveland. ‘Er waren twee dingen
+          die destijds als eerste werden opgericht,’ zegt hij. ‘Dat was de
+          school, en pas daarna de kerk. Vanaf het begin van de 17e eeuw was
+          hier onderwijs. En nu is er geen onderwijs meer.’
+        </p>
+      </div>
+    </div>
+  );
 }
 
 export default App;
