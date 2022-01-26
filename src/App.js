@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Header from './Components/Header';
 import Walking from './Components/Walking';
-import ChartContainer from './Containers/ChartContainer';
+import ChartContainer from './ChartContainer';
 import SecondChartContainer from './SecondChartContainer/SecondChartContainer';
 import duinen from './assets/duinen.png';
 import klok from './assets/klokicon.svg';
