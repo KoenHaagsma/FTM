@@ -44,7 +44,7 @@ const compareDistance = () => {
                 const formattedKeys = [
                     'Huisartsenpost',
                     'Huisarts',
-                    'Ziekenhuis_ex',
+                    'Ziekenhuis',
                     'Basisschool',
                     'VMBO',
                     'HAVO/VWO',
@@ -130,6 +130,7 @@ const compareDistance = () => {
                         }
                         i++;
                     }
+                    console.log(output);
                     resolve(output);
                 }
                 return output;

@@ -19,7 +19,7 @@ export default function LollipopChart({ data }) {
         const formattedKeys = [
             'Huisartsenpost',
             'Huisarts',
-            'Ziekenhuis_ex',
+            'Ziekenhuis',
             'Basisschool',
             'VMBO',
             'HAVO/VWO',

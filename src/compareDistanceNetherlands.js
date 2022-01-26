@@ -56,7 +56,7 @@ const compareDistanceNetherlands = () => {
                 const formattedKeys = [
                     'Huisartsenpost',
                     'Huisarts',
-                    'Ziekenhuis_ex',
+                    'Ziekenhuis',
                     'Basisschool',
                     'VMBO',
                     'HAVO/VWO',

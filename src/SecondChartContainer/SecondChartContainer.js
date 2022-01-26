@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../App.css';
 import LollipopChart from '../LollipopChart/LollipopChart.js';
 import SecondLollipopChart from '../SecondLollipopChart/SecondLollipopChart.js';
+import BiggestChangesList from '../BiggestChangesList/BiggestChangesList.js';
 import { compareDistance } from '../compareDistanceAllDistricts';
 import { compareDistanceNetherlands } from '../compareDistanceNetherlands';
 import Legenda from '../Legenda/Legenda.js';
@@ -40,6 +41,7 @@ function SecondChartContainer() {
                 {data && secondData && <LollipopChart data={data} />}
                 {data && secondData && <SecondLollipopChart data={secondData} />}
             </div>
+            {data && secondData && <BiggestChangesList data={data} />}
         </>
     );
 }
