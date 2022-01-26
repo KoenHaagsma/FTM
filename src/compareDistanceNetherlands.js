@@ -82,7 +82,6 @@ const compareDistanceNetherlands = () => {
                     a++;
                 }
 
-                console.log(output);
                 resolve(output);
             })
             .catch((err) => reject(err));

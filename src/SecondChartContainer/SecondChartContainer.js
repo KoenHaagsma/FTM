@@ -2,14 +2,12 @@ import React, { useState, useEffect } from 'react';
 import '../App.css';
 import LollipopChart from '../LollipopChart/LollipopChart.js';
 import SecondLollipopChart from '../SecondLollipopChart/SecondLollipopChart.js';
-import { csv } from 'd3';
 import { compareDistance } from '../compareDistanceAllDistricts';
 import { compareDistanceNetherlands } from '../compareDistanceNetherlands';
 import Legenda from '../Legenda/Legenda.js';
 import Title from '../Title/Title';
 
 function SecondChartContainer() {
-    const [postcode, setPostcode] = useState('');
     const [data, setData] = useState();
     const [secondData, setSecondData] = useState();
 
