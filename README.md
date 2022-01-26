@@ -1,5 +1,7 @@
 # ⚙ Follow the money design project
 
+![Image of full mobile article](./screenshot2.png)
+
 ## 📂 Assignment
 How can we visualize the impoverishment in the Netherlands for the readers of Follow The Money (in a narrative) way for mobile screens?
 
