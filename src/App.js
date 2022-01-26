@@ -36,7 +36,7 @@ function App() {
                     gemeenten zijn gefuseerd of gesplitst. Denk aan zwembaden, postkantoren, politiebureau's,
                     gemeentehuizen, scholen en bibliotheken. Zo sloot een op de tien basisscholen, verdwenen tientallen
                     politieposten en wonen steeds meer nederlanders niet in de buurt van de ziekenhuis of ov-verbinding.
-                    Dat blijkt volgens de metingen van CBS. Die doet jaarlijks (2007-20219) metingen over de gemiddelde
+                    Dat blijkt volgens de metingen van CBS. Die doet jaarlijks (2007-2021) metingen over de gemiddelde
                     afstanden die mensen in buurten, wijken en gemeenten moeten afleggen.
                 </p>
                 <p className="artikeltekst">
