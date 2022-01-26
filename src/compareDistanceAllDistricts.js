@@ -15,17 +15,6 @@ const compareDistance = () => {
                     }
                 }
 
-                const netherlands = [];
-                for (const el in data) {
-                    if (data[el].GWB_CODE === 'NL0000') {
-                        netherlands.push(data[el]);
-                    }
-                }
-
-                const firstLast = [];
-                firstLast.push(netherlands[0]);
-                firstLast.push(netherlands[netherlands.length - 1]);
-
                 //Get all key values of GWB_NAAM
                 const nameOfDistrict = year2007.map((el) => {
                     return { code: el.GWB_CODE, jaar: el.Jaar };
@@ -52,7 +41,6 @@ const compareDistance = () => {
                     'bibliotheek_afst',
                 ];
 
-                // eslint-disable-next-line
                 const formattedKeys = [
                     'Huisartsenpost',
                     'Huisarts',
@@ -84,6 +72,8 @@ const compareDistance = () => {
                     }
                     differenceArray.push(difference);
                 }
+
+                console.log(differenceArray);
 
                 // Get first and last value from specific object
                 const output = [];
@@ -118,19 +108,6 @@ const compareDistance = () => {
                     };
                     // maxOutput[`${key1}_difference`] = maxValue[`${key1}_difference`];
                     maxOutput['key'] = formattedKeys[i];
-
-                    const generalOutput = {
-                        districtName: netherlands[0].GWB_NAAM,
-                        districtCode: netherlands[0].GWB_CODE,
-                        value1: parseFloat(netherlands[0][key1].split(',').join('.')),
-                        value2: parseFloat(netherlands[netherlands.length - 1][key1].split(',').join('.')),
-                    };
-                    generalOutput['key'] = formattedKeys[i];
-
-                    // Need this for multiple values
-                    const combined = [];
-                    combined.push(maxOutput);
-                    combined.push(generalOutput);
 
                     output.push(maxOutput);
                     i++;
