@@ -130,7 +130,6 @@ const compareDistance = () => {
                         }
                         i++;
                     }
-                    console.log(output);
                     resolve(output);
                 }
                 return output;
